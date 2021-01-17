@@ -1,5 +1,6 @@
 $('.search-button').on('click', function (){
     $.ajax({
+//         disni temen2 harus punya key dan ganti http://www.omdbapi.com/?apikey== dengan key temen2
         url    : 'http://www.omdbapi.com/?apikey==' + $('.input-keyword').val(),
         success: results => {  
             let movies = results.Search;
@@ -13,6 +14,7 @@ $('.search-button').on('click', function (){
             $('.modal-detail-button').on('click', function () {
                 // console.log($(this).data('imdbid'));
                 $.ajax ({
+//                      disni juga temen2 harus punya key dan ganti http://www.omdbapi.com/?apikey== dengan key temen2
                     url:'http://www.omdbapi.com/?apikey==' + $(this).data('imdbid'),
                     success : m => {
                         const movieDetail = showMovieDetail(m);
